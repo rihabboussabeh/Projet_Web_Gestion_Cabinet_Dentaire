@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Menu</title>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="iecss.css" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="plugcla/stylem.css" media="screen" />
+<script type="text/javascript" src="plugcla/jquery.min.js"></script>
+<script type="text/JavaScript" src="plugcla/cloud-carousel.1.0.5.js"></script>
+<script>
+var k =0;
+var v=new Array();
+v[0]=new Image(); v[0].src="Image/dentiste.jpg" ;
+v[1]=new Image(); v[1].src="Image/Dentiste3.jpg";
+v[2]=new Image(); v[2].src="Image/doctors.jpg " ;
+
+
+function changer()
+{
+if(k==0) k=1;
+else if(k==1) k=2;
+else if(k==2) k=0;
+
+  
+  document.images.photo.src=v[k].src;
+}
+</script>
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+						   
+	// This initialises carousels on the container elements specified, in this case, carousel1.
+	$("#carousel1").CloudCarousel(		
+		{			
+			reflHeight: 40,
+			reflGap:2,
+			titleBox: $('#da-vinci-title'),
+			altBox: $('#da-vinci-alt'),
+			buttonLeft: $('#slider-left-but'),
+			buttonRight: $('#slider-right-but'),
+			yRadius:30,
+			xPos: 450,
+			yPos: 32,
+			speed:0.15,
+		}
+	);
+});
+ 
+</script>
+</head>
+
+<body>
+
+
+<div id="main_container">
+	<div class="header">
+    	<div id="logo"><a href="index.html"><img src="Image/logo.png" alt="" title="" width="162" height="54" border="0" /></a></div>
+    
+    	<div class="right_header">
+        	
+            <div class="top_menu">
+            <a href="index1.html" class="login" style="position:absolute; left: 1027px; top: 29px;">Acceuil</a>  
+			            <a href="Fermer_session.php" class="logout" style="position:absolute; left: 922px; top: 29px;" >Déconnexion</a>			         </div>
+			
+        </div>
+    
+    </div>
+    <div id="middle_box" style= "background-image:url(Image/box_bg.png)">
+	<div id="templatemo_slider">
+	<!-- This is the container for the carousel. -->
+    <div id = "carousel1" style="width:960px; height:280px;background:none;overflow:scroll">     
+        <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
+        <!-- You can place links around these images -->
+        <a href="weekcalendar1.php" rel="lightbox"><img class="cloudcarousel" src="Image/slider/01.png" title="Rendez vous" /></a>
+        <a href="Fiche_Patient.php" rel="lightbox"><img class="cloudcarousel" src="Image/slider/02.png"  title="Gestion des Patients" /></a>
+        <a href="stat1.php" rel="lightbox"><img class="cloudcarousel" src="Image/slider/03.png"  title="Statistique Année Actuelle" /></a>
+        <a href="stat4.php" rel="lightbox"><img class="cloudcarousel" src="Image/slider/04.png"  title="Statistique des 4 ans" /></a>
+		<a href="medicament.php" rel="lightbox"><img class="cloudcarousel" src="Image/slider/07.png"  title="Gestion des médicaments" /></a>
+        <a href="modif_log.html" rel="lightbox"><img class="cloudcarousel" src="Image/slider/06.png" title="Modifier Mot de Passe" /></a>
+        <a href="contact.php" rel="lightbox"><img class="cloudcarousel" src="Image/slider/05.png"  title="A propos " /></a>
+        
+    </div>
+    
+    <!-- Define left and right buttons. -->
+    <center>
+    <input id="slider-left-but" type="button" value="" />
+    <input id="slider-right-but" type="button" value="" />
+    </center>
+</div>
+    </div>
+    
+    
+    <div   class="pattern_bg" ><img id=photo src="Image/dentiste.jpg" width="900" height="378" /></div> 
+     <script>setInterval('changer()',3000);</script>
+	 
+    
+    
+    
+            
+            
+     <div id="footer">
+     	<div class="copyright">
+        <img src="Image/footer_logo.gif" alt="" title="" />
+        </div>
+        <div class="center_footer">&copy; Cabinet Dentaire 2013.Tous Droits Réservés</div>    	    
+    </div>
+</div>
+
+</body>
+</html>
